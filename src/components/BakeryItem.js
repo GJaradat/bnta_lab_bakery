@@ -1,8 +1,10 @@
 import './BakeryItem.css';
 
 
-const BakeryItem = ({cake}) => {
+const BakeryItem = ({cake, cakesSold, profit, setCakesSold, setProfit}) => {
 
+
+    // create star rating
     const ratingHandler = (rating) => {
         let starRating = ""
         for (let i = 0; i < rating; i++) { 
@@ -12,6 +14,11 @@ const BakeryItem = ({cake}) => {
 
     const starRating = ratingHandler(cake.rating);
 
+    // Buy button functionality
+    const buyHandler = () => {
+        setCakesSold(cakesSold + 1);
+        setProfit(profit + cake.price);
+    }
     return (
         <section className="bakery-item">
             {/* Why was it not detecting the image when i just selected src = "./placeholder_cake.jpg" */}
@@ -22,7 +29,7 @@ const BakeryItem = ({cake}) => {
             </div>
                 <h3>{starRating}</h3>
             <div>
-                <button>Buy</button>
+                <button onClick={buyHandler}>Buy</button>
                 <button>List ingredients</button>
             </div>
         </section>
