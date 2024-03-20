@@ -3,6 +3,8 @@ import BakeryItem from '../components/BakeryItem';
 import BakeryItemsPayload from '../components/BakeryItemsPayload';
 import Cake from '../models/Cake';
 
+import './BakeryContainer.css';
+
 const BakeryContainer = () => {
     
     // get bakeryItems from BakeryItemsPayload
@@ -18,8 +20,7 @@ const BakeryContainer = () => {
     }
 
     return (
-        <div>
-            <h3>Bakery Items here</h3>
+        <div className="bakery-container">
             {bake()}
         </div>
     )

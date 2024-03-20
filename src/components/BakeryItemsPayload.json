@@ -39,5 +39,18 @@
    		],
 	   	"price": 8,
    		"rating": 5
-	}
+	},
+
+    {
+        "cakeName": "Sacher Cake",
+          "ingredients": [
+               "carrots",
+                "walnuts",
+                "oil",
+                "flour",
+                "sugar"
+          ],
+          "price": 12,
+          "rating": 5
+   }
 ] 

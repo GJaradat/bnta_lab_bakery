@@ -1,0 +1,11 @@
+.bakery-item {
+    text-align: start;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.bakery-item div {
+    display: flex;
+    flex-direction: row;
+}
