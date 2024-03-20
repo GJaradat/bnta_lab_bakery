@@ -12,7 +12,8 @@ const BakeryContainer = () => {
     const bake = () => {
         return bakeryItems.map((item) => {
             let cake = new Cake(item.cakeName, item.ingredients, item.price, item.rating);
-            return <BakeryItem key={item.id} cake={cake} />
+            console.log(cake.cakeName);
+            return <BakeryItem key={cake.cakeName} cake={cake} />
         })
     }
 
