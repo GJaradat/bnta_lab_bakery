@@ -1,9 +1,19 @@
-const BakeryItem = (props) => {
+const BakeryItem = ({cake}) => {
+
+    //
 
     return (
-        <div>
-            <h3>{props.name}</h3>
-        </div>
+        <section>
+            <div>
+                <h3>{cake.cakeName}</h3>
+                <h3>{cake.price}</h3>
+            </div>
+                <h3>{cake.rating}</h3>
+            <div>
+                <button>Buy</button>
+                <button>List ingredients</button>
+            </div>
+        </section>
     )
 }
 
