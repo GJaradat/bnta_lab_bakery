@@ -1,5 +1,5 @@
 import './BakeryItem.css';
-
+import { useState } from 'react';
 
 const BakeryItem = ({cake, cakesSold, profit, setCakesSold, setProfit}) => {
 
@@ -19,6 +19,16 @@ const BakeryItem = ({cake, cakesSold, profit, setCakesSold, setProfit}) => {
         setCakesSold(cakesSold + 1);
         setProfit(profit + cake.price);
     }
+
+    // List ingredients button functionality
+    const ingredientsID = `${cake.cakeName} ingredients`;
+    const [showIngredients, setShowIngredients] = useState("none");
+
+    const toggleIngredients = () => {
+        // toggle visibility of ingredients
+        setShowIngredients(showIngredients => (showIngredients === "none" ? "block" : "none"));
+    }
+
     return (
         <section className="bakery-item">
             {/* Why was it not detecting the image when i just selected src = "./placeholder_cake.jpg" */}
@@ -28,9 +38,10 @@ const BakeryItem = ({cake, cakesSold, profit, setCakesSold, setProfit}) => {
                 <h3>£{cake.price}</h3>
             </div>
                 <h3>{starRating}</h3>
+                <h3 className= "ingredients" itemID={ingredientsID} style={{display: showIngredients}}>Ingredients: {cake.ingredients.join(", ")}</h3>
             <div>
                 <button onClick={buyHandler}>Buy</button>
-                <button>List ingredients</button>
+                <button onClick={toggleIngredients}>List ingredients</button>
             </div>
         </section>
     )

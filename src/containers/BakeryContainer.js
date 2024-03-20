@@ -23,6 +23,8 @@ const BakeryContainer = () => {
     const [cakesSold, setCakesSold] = useState(0);
     const [profit, setProfit] = useState(0);
 
+    
+
     return (
         <>
         <div className="bakery-container">
